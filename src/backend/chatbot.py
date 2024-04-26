@@ -8,16 +8,18 @@ from langchain.prompts.chat import (
     AIMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
-from llama_index import (
+from llama_index.core import (
     SimpleDirectoryReader,
     VectorStoreIndex,
     ServiceContext,
 )
-from llama_index.llms import LlamaCPP
-from llama_index.llms.llama_utils import (
-    messages_to_prompt,
-    completion_to_prompt,
-)
+from llama_index.llms import *
+from llama_index.llms.llama_cpp import LlamaCPP
+from llama_index.llms.llama_cpp.llama_utils import messages_to_prompt, completion_to_prompt
+# from llama_index.llms.llama_utils import (
+#     messages_to_prompt,
+#     completion_to_prompt,
+# )
 import subprocess
 import time
 
@@ -26,6 +28,7 @@ import time
 
 # initialize model
 # llm = "tbd"
+model = "Llama2-7b_CPP"
 
 print("BP 4 ")
 
@@ -36,7 +39,8 @@ def init_llm(model, demo_lite):
     if demo_lite == False:
         print("BP 5 : running full demo")
         if model == "Llama2-7b_CPP":
-            model_path = "/Users/dheym/Library/CloudStorage/OneDrive-Personal/Documents/side_projects/GRDN/src/models/llama-2-7b-chat.Q4_K_M.gguf"
+            # model_path = "/Users/dheym/Library/CloudStorage/OneDrive-Personal/Documents/side_projects/GRDN/src/models/llama-2-7b-chat.Q4_K_M.gguf"
+            model_path = "/Users/alielzein/Desktop/TAMU_Semesters/Spring_2024/CSCE_420_ArtificialIntelligence/GRDN-CSCE420/src/models/llama-2-7b-chat.Q4_K_M.gguf"
             print("model path: ", model_path)
             llm = LlamaCPP(
                 # You can pass in the URL to a GGML model to download it automatically

@@ -175,7 +175,7 @@ if page == "Garden Optimization":
     add_vertical_space(2)
 
     # make a container for this section
-    container1 = st.container(border=True)
+    container1 = st.container()
 
     with container1:
         # Modify the user_name variable based on user input
