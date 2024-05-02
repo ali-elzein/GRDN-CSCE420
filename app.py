@@ -357,7 +357,7 @@ if page == "Garden Optimization":
         # add a title for the next section- companion plant compatibility matrix based on user input
         st.title("Your companion plant compatibility matrix")
         # make a container for this section
-        container2 = st.container(border=True)
+        container2 = st.container()
         with container2:
             col1, col2 = st.columns([8, 4])
             # display the companion plant compatibility matrix
@@ -378,7 +378,7 @@ if page == "Garden Optimization":
             # add in some vertical space
             add_vertical_space(4)
             # make a container for this section
-            container3 = st.container(border=True)
+            container3 = st.container()
             with container3:
                 st.title(
                     "Optimizing companion planting with the genetic algorithm and AI"
@@ -489,7 +489,7 @@ if page == "Garden Optimization":
                 # make a container for this section
                 st.title(st.session_state.user_name + "'s optimized garden")
                 st.header("Here are the optimized groupings of plants for your garden")
-                container4 = st.container(border=True)
+                container4 = st.container()
                 with container4:
                     if "grouping" in st.session_state:
                         visualize_groupings()
